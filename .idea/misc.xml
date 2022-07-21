@@ -3,10 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/PENETRON/AndroidStudioProjects/CanvasPaint/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/PENETRON/AndroidStudioProjects/CanvasPaint/app/src/main/res/drawable/bg_selected.xml" value="0.1" />
+        <entry key="..\:/Users/PENETRON/AndroidStudioProjects/CanvasPaint/app/src/main/res/drawable/ic_palette.xml" value="0.185" />
+        <entry key="..\:/Users/PENETRON/AndroidStudioProjects/CanvasPaint/app/src/main/res/drawable/ic_selected_tool.xml" value="0.185" />
+        <entry key="..\:/Users/PENETRON/AndroidStudioProjects/CanvasPaint/app/src/main/res/drawable/ic_size.xml" value="0.185" />
+        <entry key="..\:/Users/PENETRON/AndroidStudioProjects/CanvasPaint/app/src/main/res/drawable/size.xml" value="0.2735" />
+        <entry key="..\:/Users/PENETRON/AndroidStudioProjects/CanvasPaint/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/PENETRON/AndroidStudioProjects/CanvasPaint/app/src/main/res/layout/item_palette.xml" value="0.365625" />
+        <entry key="..\:/Users/PENETRON/AndroidStudioProjects/CanvasPaint/app/src/main/res/layout/item_size.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/PENETRON/AndroidStudioProjects/CanvasPaint/app/src/main/res/layout/item_tools.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/PENETRON/AndroidStudioProjects/CanvasPaint/app/src/main/res/layout/layout_tools.xml" value="0.275" />
+        <entry key="..\:/Users/PENETRON/AndroidStudioProjects/CanvasPaint/app/src/main/res/layout/size_value.xml" value="0.365625" />
         <entry key="..\:/Users/PENETRON/AndroidStudioProjects/CanvasPaint/app/src/main/res/layout/view_tools.xml" value="0.365625" />
       </map>
     </option>

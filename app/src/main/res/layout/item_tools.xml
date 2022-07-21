@@ -1,8 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/ivTool"
-    android:layout_width="24dp"
-    android:layout_height="24dp"
-    android:layout_gravity="center_vertical"
-    android:src="@drawable/ic_horizontal_line">
-</ImageView>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativelayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/ivTool"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_size"
+        />
+
+    <TextView
+        android:id="@+id/selectedSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/ivTool"
+        android:layout_alignTop="@+id/ivTool"
+        android:layout_alignEnd="@+id/ivTool"
+        android:layout_alignBottom="@+id/ivTool"
+        android:textSize="10sp"
+        android:textColor="@color/black"/>
+
+
+</RelativeLayout>
+
+

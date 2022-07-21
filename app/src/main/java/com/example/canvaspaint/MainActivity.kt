@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.core.view.isVisible
+import com.example.canvaspaint.ui.CanvasViewModel
+import com.example.canvaspaint.ui.UiEvent
+import com.example.canvaspaint.ui.ViewState
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
@@ -15,28 +18,37 @@ class MainActivity : AppCompatActivity() {
     }
 
     private val viewModel: CanvasViewModel by viewModel()
-
     private var toolsList: List<ToolsLayout> = listOf()
-
     private val paletteLayout: ToolsLayout by lazy { findViewById(R.id.paletteLayout) }
     private val toolsLayout: ToolsLayout by lazy { findViewById(R.id.toolLayout) }
+    private val sizeLayout: ToolsLayout by lazy { findViewById(R.id.sizeLayout) }
     private val toolsMenu: ImageView by lazy { findViewById(R.id.ivMenu) }
+    private val clearButton: ImageView by lazy { findViewById(R.id.ivClear) }
+    private val drawView: DrawView by lazy { findViewById(R.id.viewDraw) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        toolsList = listOf(paletteLayout, toolsLayout)
+        toolsList = listOf(paletteLayout, toolsLayout, sizeLayout)
         viewModel.viewState.observe(this,::render)
-        paletteLayout.setOnClickListener {
-            viewModel.processUIEvent(UiEvent.OnPaletteClicked(it))
-        }
-        toolsLayout.setOnClickListener {
-            viewModel.processUIEvent(UiEvent.OnToolsClick(it))
-        }
-
         toolsMenu.setOnClickListener {
             viewModel.processUIEvent(UiEvent.OnToolbarClicked)
         }
+        clearButton.setOnClickListener {
+            drawView.clear()
+        }
+
+        toolsLayout.setOnClickListener {
+            viewModel.processUIEvent(UiEvent.OnToolsClick(it))
+        }
+        paletteLayout.setOnClickListener {
+            viewModel.processUIEvent(UiEvent.OnPaletteClicked(it))
+        }
+        sizeLayout.setOnClickListener {
+            viewModel.processUIEvent(UiEvent.OnSizeClick(it))
+        }
+
+
     }
 
     private fun render(viewState: ViewState) {
@@ -49,5 +61,11 @@ class MainActivity : AppCompatActivity() {
             render(viewState.toolsList)
             isVisible = viewState.isToolsVisible
         }
+
+        with(toolsList[SIZE]) {
+            render(viewState.sizeList)
+            isVisible = viewState.isBrushSizeChangerVisible
+        }
+        drawView.render(viewState.canvasViewState)
     }
 }
